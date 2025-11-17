@@ -12,5 +12,5 @@
     validate_certs: "{{ satellite_validate_certs | default(omit) }}" # drop through to the module default (true)
     name: "{{ satellite_user_group_external.auth_source_group_name }}"
     auth_source: "{{ satellite_user_group_external.auth_source }}"
-    usergroup: "{{ satellite_user_group_external.sat_usergroup }}"
+    usergroup: "{{ satellite_user_group_external.satellite_usergroup }}"
     state: "{{ satellite_user_group_external.state | default(omit) }}" # drop through to the module default (present)

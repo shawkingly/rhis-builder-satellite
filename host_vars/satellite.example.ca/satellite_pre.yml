@@ -10,18 +10,18 @@ apply_standard_tuning: true
 
 # prerequisites
 cdn_organization_id: "{{ cdn_organization_id_vault }}"
-cdn_sat_activation_key: "{{ cdn_sat_activation_key_vault }}"
+cdn_satellite_activation_key: "{{ cdn_satellite_activation_key_vault }}"
 
-sat_repository_ids:
+satellite_repository_ids:
   - rhel-9-for-x86_64-baseos-rpms
   - rhel-9-for-x86_64-appstream-rpms
   - satellite-6.17-for-rhel-9-x86_64-rpms
   - satellite-maintenance-6.17-for-rhel-9-x86_64-rpms
 
-sat_firewalld_zone: "public"
-sat_firewalld_interface: "{{ ansible_default_ipv4.interface }}"
-sat_override_iface: ""
-sat_firewalld_services:
+satellite_firewalld_zone: "public"
+satellite_firewalld_interface: "{{ ansible_default_ipv4.interface }}"
+satellite_override_iface: ""
+satellite_firewalld_services:
   - RH-Satellite-6
   - http
   - https
@@ -94,21 +94,21 @@ ipa_server_ca_crt_path: "/etc/ipa/ca.crt"
 # the satellite_pre role will look for you files as using the supplied ansible_fqdn
 # use_non_idm_certs: true
 
-sat_ssl_certs_dir: "/etc/ipa/private/{{ ansible_fqdn }}/"
-sat_ssl_rsa_key_pass: "{{ sat_ssl_rsa_key_pass_vault }}"
-sat_ssl_crt_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.crt"
-sat_ssl_key_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.key"
-sat_ssl_csr_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.csr"
-sat_ssl_ca_crt_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.ca.crt"
+satellite_ssl_certs_dir: "/etc/ipa/private/{{ ansible_fqdn }}/"
+satellite_ssl_rsa_key_pass: "{{ satellite_ssl_rsa_key_pass_vault }}"
+satellite_ssl_crt_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.crt"
+satellite_ssl_key_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.key"
+satellite_ssl_csr_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.csr"
+satellite_ssl_ca_crt_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.ca.crt"
 
 crt_service_type: "HTTP"
 crt_force_regen: true
 
-passfile: "{{ sat_ssl_certs_dir }}passfile"
+passfile: "{{ satellite_ssl_certs_dir }}passfile"
 ssl_private_key_cipher: "aes256"
 ssl_private_key_size: 4096
-ssl_private_key_pem_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.pem"
-ssl_public_key_path: "{{ sat_ssl_certs_dir }}{{ ansible_fqdn }}.pub"
+ssl_private_key_pem_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.pem"
+ssl_public_key_path: "{{ satellite_ssl_certs_dir }}{{ ansible_fqdn }}.pub"
 ssl_public_key_format: "PEM"
 
 csr_digest: "aes256"

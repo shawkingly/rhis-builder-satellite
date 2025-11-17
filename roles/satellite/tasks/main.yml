@@ -10,8 +10,8 @@
     name: "redhat.satellite_operations.installer"
   vars:
     satellite_installer_scenario: "satellite"                   # noqa: var-naming[no-role-prefix]
-    satellite_installer_options: "{{ sat_installer_options }}"
-    satellite_installer_verbose: "{{ sat_installer_verbose }}"
+    satellite_installer_options: "{{ satellite_installer_options }}"
+    satellite_installer_verbose: "{{ satellite_installer_verbose }}"
   no_log: true
 
 # using tags here and calling main with the tags will not execute the role.

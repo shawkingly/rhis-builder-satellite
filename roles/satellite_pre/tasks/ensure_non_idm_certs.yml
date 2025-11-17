@@ -2,7 +2,7 @@
 
 - name: "Create a secure directory"
   ansible.builtin.file:
-    path: "{{ sat_ssl_certs_dir }}"
+    path: "{{ satellite_ssl_certs_dir }}"
     state: "directory"
     owner: "root"
     group: "root"
@@ -15,7 +15,7 @@
 - name: "Copy the certificate to the server"
   ansible.builtin.copy:
     src: "{{ ansible_fqdn }}.crt"
-    dest: "{{ sat_ssl_key_path }}"
+    dest: "{{ satellite_ssl_key_path }}"
     owner: "root"
     group: "root"
     mode: "0600"
@@ -23,7 +23,7 @@
 - name: "Copy the certificate key to the server"
   ansible.builtin.copy:
     src: "{{ ansible_fqdn }}.key"
-    dest: "{{ sat_ssl_key_path }}"
+    dest: "{{ satellite_ssl_key_path }}"
     owner: "root"
     group: "root"
     mode: "0600"
@@ -31,7 +31,7 @@
 - name: "Copy the CA cert to the server"
   ansible.builtin.copy:
     src: "{{ ansible_fqdn }}.ca.crt"
-    dest: "{{ sat_ssl_ca_crt_path }}"
+    dest: "{{ satellite_ssl_ca_crt_path }}"
     owner: "root"
     group: "root"
     mode: "0600"

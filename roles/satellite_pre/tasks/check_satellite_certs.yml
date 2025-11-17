@@ -2,6 +2,6 @@
 
 # Verify the certs check out
 - name: "Checking the certificates for Satellite"
-  ansible.builtin.command: "katello-certs-check -c {{ sat_ssl_crt_path }} -k {{ sat_ssl_key_path }} -b {{ sat_ssl_ca_crt_path }}"
+  ansible.builtin.command: "katello-certs-check -c {{ satellite_ssl_crt_path }} -k {{ satellite_ssl_key_path }} -b {{ satellite_ssl_ca_crt_path }}"
   register: kcc_result
   changed_when: kcc_result == 0

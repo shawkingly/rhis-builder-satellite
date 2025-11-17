@@ -5,7 +5,7 @@
 
 - name: "Ensure the proper repositories are enabled"
   community.general.rhsm_repository:
-    name: "{{ sat_repository_ids }}"
+    name: "{{ satellite_repository_ids }}"
     state: enabled
     purge: true
 

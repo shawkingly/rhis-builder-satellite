@@ -2,7 +2,7 @@
 # Supply default variables for satellite_pre role
 
 capsule_pre_min_var_storage_gb: 200
-capsule_pre_sat_fqdn: "satellite.example.ca"
+capsule_pre_satellite_fqdn: "satellite.example.ca"
 capsule_pre_assert_not_users:
   - "apache"
   - "foreman-proxy"

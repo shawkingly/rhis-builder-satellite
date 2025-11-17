@@ -269,7 +269,7 @@ logger "Starting anaconda <%= @host %> postinstall"
 <% end -%>
 
 <% if rhel_compatible && !host_param_false?('disable-non-sat-repos') -%>
-<%= snippet 'soe_disable_non_sat_repos' -%>
+<%= snippet 'soe_disable_non_satellite_repos' -%>
 <% end -%>
 
 <% if rhel_compatible && host_param_true?('enable-epel') -%>

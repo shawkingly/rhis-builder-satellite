@@ -36,7 +36,7 @@ description: |
 %>
 
 <% if host_param_true?('disable-non-sat-repos') -%>
-  snippet('soe_disable_non_sat_repos')
+  snippet('soe_disable_non_satellite_repos')
 <% end -%>
 
 <%= snippet_if_exists(template_name + " custom pre") -%>

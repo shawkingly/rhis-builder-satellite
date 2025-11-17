@@ -20,24 +20,24 @@
     masked: false
 
 - name: "Set the primary interface for Satellite communication"
-  when: override_iface is defined and (sat_override_iface | length) > 0
+  when: override_iface is defined and (satellite_override_iface | length) > 0
   ansible.builtin.set_fact:
-    sat_firewalld_interface: "{{ override_iface }}"
+    satellite_firewalld_interface: "{{ override_iface }}"
 
 - name: "Configure Firewalld services and ports for Satellite"
   ansible.builtin.include_role:
     name: "redhat.rhel_system_roles.firewall"
   vars:
     firewall:                                                                     # noqa: var-naming[no-role-prefix]
-      - { set_default_zone: "{{ sat_firewalld_zone }}",
+      - { set_default_zone: "{{ satellite_firewalld_zone }}",
           state: enabled }
-      - { interface: "{{ sat_firewalld_interface }}",
-          zone: "{{ sat_firewalld_zone }}",
+      - { interface: "{{ satellite_firewalld_interface }}",
+          zone: "{{ satellite_firewalld_zone }}",
           state: enabled }
       - { service: "RH-Satellite-6",
           port: ["5646/tcp", "8888/tcp", "8889/tcp", "5671/tcp", "5671/udp"],
           permanent: true,
           state: present }
-      - { service: "{{ sat_firewalld_services }}",
+      - { service: "{{ satellite_firewalld_services }}",
           permanent: true,
           state: enabled }

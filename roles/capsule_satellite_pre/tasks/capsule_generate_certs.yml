@@ -5,7 +5,7 @@
 # This task assumes the ipa client is installed and configured.
 - name: "Define the secure directory"
   ansible.builtin.set_fact:
-    capsule_crt_dir: "{{ sat_idm_certs_private }}{{ cert_capsule.fqdn }}/"
+    capsule_crt_dir: "{{ satellite_idm_certs_private }}{{ cert_capsule.fqdn }}/"
 
 - name: "Define the capsule_cert_path"
   ansible.builtin.set_fact:

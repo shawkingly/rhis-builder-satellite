@@ -11,8 +11,8 @@ satellite_tuning_size: "default"  # up to 5000 hosts   20 GiB RAM   4 Cores
 # satellite_tuning_size: "extra-large"   # up to 60000 hosts   128 GiB RAM  requires minimum  32 Cores
 # satellite_tuning_size: "extra-extra-large"   # 60000+ hosts   256 GiB+ RAM  requires minimum 64+ Cores
 
-sat_installer_verbose: true
-sat_installer_options:
+satellite_installer_verbose: true
+satellite_installer_options:
   - '--skip-checks-i-know-better'
   - '--foreman-foreman-service-puma-threads-min=16'  # recommended for every performance profile
   - '--foreman-foreman-service-puma-threads-max=16'  # recommended for every performance profile

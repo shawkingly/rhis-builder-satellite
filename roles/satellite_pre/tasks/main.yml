@@ -27,7 +27,7 @@
     - tags_satellite_pre_firewall
 
 - name: "Ensure satellite binaries are installed"
-  ansible.builtin.import_tasks: ensure_sat_binaries.yml
+  ansible.builtin.import_tasks: ensure_satellite_binaries.yml
   tags:
     - tags_satellite_pre
     - tags_satellite_pre_packages

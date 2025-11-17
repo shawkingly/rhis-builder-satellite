@@ -7,3 +7,9 @@ parmstrong.ca.*
 files/ssg-rhel7-ds-tailoring.xml
 files/ssg-rhel8-ds-tailoring.xml
 files/ssg-rhel9-ds-tailoring.xml
+
+# Vault files (contain secrets)
+*vault.yml
+rhisbuilder_vault.yml
+!*SAMPLE*.yml
+!*template*.yml
